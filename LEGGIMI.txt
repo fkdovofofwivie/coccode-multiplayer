@@ -1,0 +1,22 @@
+COCCODÈ – MULTIPLAYER ONLINE
+
+CONTENUTO
+- index.html: gioco con pulsanti CREA PARTITA / ENTRA NELLA PARTITA
+- server.js: server realtime con stanze e codici a 4 cifre
+- package.json: dipendenze
+- AVVIA.bat: avvio rapido su Windows
+
+TEST SUL TUO PC
+1. Installa Node.js LTS da https://nodejs.org/ (serve una sola volta).
+2. Estrai tutta la cartella in un percorso normale del PC.
+3. Fai doppio clic su AVVIA.bat.
+4. Si apre http://localhost:3000. Premi CREA PARTITA e condividi il codice.
+5. Per provare da un altro dispositivo sulla stessa rete Wi-Fi, apri nel suo browser http://IP-DEL-PC:3000 (il firewall potrebbe chiedere il permesso).
+
+IMPORTANTE: PER GIOCARE CON CHIUNQUE VIA INTERNET
+Il file .bat avvia il server solo sul computer che lo esegue. Per raggiungere amici su reti diverse, questa cartella deve essere pubblicata su un servizio che esegua Node.js e mantenga il server acceso (hosting). Poi tutti aprono l'indirizzo HTTPS pubblico del gioco. Il solo file HTML o il .bat non crea da sé un server pubblico.
+
+La stanza supporta fino a 12 giocatori contemporanei. Le posizioni dei polli vengono sincronizzate in tempo reale; il mondo e gli NPC restano simulati separatamente su ogni dispositivo.
+
+PUBBLICAZIONE SU INTERNET (PASSO SUCCESSIVO)
+Questa cartella include render.yaml come configurazione iniziale per un hosting Node compatibile. Per renderla raggiungibile da tutti, carica la cartella in un repository Git, collega il repository a un servizio di hosting Node e avvia il servizio usando `npm install` come build e `npm start` come comando di avvio. Quando l'hosting fornisce un URL HTTPS pubblico, condividi quell'indirizzo: tutti i giocatori dovranno aprire lo stesso URL. Il server deve restare attivo perché le stanze esistono nella memoria del processo.
